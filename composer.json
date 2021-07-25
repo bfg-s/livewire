@@ -1,0 +1,34 @@
+{
+    "name": "bfg/livewire",
+    "description": "Finder for the Livewire",
+    "type": "bfg-app",
+    "keywords": ["laravel", "extension", "livewire"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bfg"
+        }
+    ],
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.0.0",
+        "bfg/installer": "*",
+        "livewire/livewire": "^2.5"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Bfg\\Livewire\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bfg\\Livewire\\ServiceProvider"
+            ]
+        }
+    }
+}

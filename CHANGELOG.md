@@ -1,0 +1,1 @@
+# ChangelogAll notable changes to this project will be documented in this file.## [0.0.1 - Beta] - 2021-07-25### Added- License mit.- Readme documentation file.- Initial functionality of the package.
