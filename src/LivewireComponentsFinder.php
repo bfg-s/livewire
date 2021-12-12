@@ -35,18 +35,20 @@ class LivewireComponentsFinder extends OriginalLivewireComponentsFinder
         $result = parent::getClassNames();
 
         foreach (static::$paths as $namespace => $path) {
-            $result_to_merge = collect($this->files->allFiles($path))
-                ->map(function (SplFileInfo $file) use ($namespace, $path) {
-                    return $namespace.'\\'.str($file->getPathname())
-                            ->after($path.'/')
-                            ->replace(['/', '.php'], ['\\', ''])->__toString();
-                })
-                ->filter(function (string $class) {
-                    return is_subclass_of($class, Component::class) &&
-                        ! (new \ReflectionClass($class))->isAbstract();
-                });
+            if (is_dir($path)) {
+                $result_to_merge = collect($this->files->allFiles($path))
+                    ->map(function (SplFileInfo $file) use ($namespace, $path) {
+                        return $namespace.'\\'.str($file->getPathname())
+                                ->after($path.'/')
+                                ->replace(['/', '.php'], ['\\', ''])->__toString();
+                    })
+                    ->filter(function (string $class) {
+                        return is_subclass_of($class, Component::class) &&
+                            ! (new \ReflectionClass($class))->isAbstract();
+                    });
 
-            $result = $result->merge($result_to_merge);
+                $result = $result->merge($result_to_merge);
+            }
         }
 
         return $result;
