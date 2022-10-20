@@ -31,6 +31,10 @@ class ServiceProvider extends IlluminateServiceProvider
 
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../assets' => public_path('turbo-livewire')
+        ], ['laravel-assets']);
 
+        $this->loadViewsFrom(__DIR__ . '/../views', 'livewire');
     }
 }

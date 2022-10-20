@@ -1,0 +1,2 @@
+@import "sweetalert2/dist/sweetalert2.min.css";
+.swal2-container { z-index: 9999999 !important; }

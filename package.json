@@ -1,0 +1,21 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "yarn run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "wp": "yarn run watch-poll",
+        "hot": "mix watch --hot",
+        "prod": "yarn run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "alpinejs": "^3.0.6",
+        "laravel-mix": "^6.0.6"
+    },
+    "dependencies": {
+        "sweetalert2": "^11.4.0",
+        "turbolinks": "^5.2.0"
+    }
+}
