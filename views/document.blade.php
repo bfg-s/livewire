@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('turbo-livewire/turbo-livewire.css') }}" data-turbolinks-track="reload">
+    <link rel="stylesheet" href="{{ asset('turbo-livewire/turbo-livewire.css') }}" @turbolinksTrackReload>
     @yield('head')
     @livewireStyles
     @stack('css')
 </head>
-<body>
+<body class="@yield('body_class')">
     @yield('body')
     @stack('scripts')
     @livewireScripts
-    <script src="{{ asset('turbo-livewire/turbo-livewire.js') }}" data-turbolinks-track="reload"></script>
+    <script src="{{ asset('turbo-livewire/turbo-livewire.js') }}" @turbolinksTrackReload></script>
     @stack('js')
     @yield('footer')
 </body>

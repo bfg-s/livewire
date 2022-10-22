@@ -36,5 +36,36 @@ class ServiceProvider extends IlluminateServiceProvider
         ], ['laravel-assets']);
 
         $this->loadViewsFrom(__DIR__ . '/../views', 'livewire');
+
+        \Blade::directive('turbolinks', [$this, 'turbolinks']);
+        \Blade::directive('turbolinksEval', [$this, 'turbolinksEval']);
+        \Blade::directive('turbolinksPermanent', [$this, 'turbolinksPermanent']);
+        \Blade::directive('turbolinksTrackReload', [$this, 'turbolinksTrackReload']);
+        \Blade::directive('turbolinksActionReplace', [$this, 'turbolinksActionReplace']);
+    }
+
+    public function turbolinksEval($exp)
+    {
+        return turbolinks($exp)->eval();
+    }
+
+    public function turbolinksTrackReload($exp)
+    {
+        return turbolinks($exp)->trackReload();
+    }
+
+    public function turbolinksPermanent($exp)
+    {
+        return turbolinks($exp)->permanent();
+    }
+
+    public function turbolinksActionReplace($exp)
+    {
+        return turbolinks($exp)->actionReplace();
+    }
+
+    public function turbolinks($exp)
+    {
+        return turbolinks($exp);
     }
 }
