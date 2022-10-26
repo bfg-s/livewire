@@ -5,6 +5,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('turbo-livewire/turbo-livewire.css') }}" @turbolinksTrackReload>
     @yield('head')
+    <script src="{{ asset('turbo-livewire/turbo-livewire.js') }}" defer @turbolinksTrackReload></script>
     @livewireStyles
     @stack('css')
 </head>
@@ -12,7 +13,6 @@
     @yield('body')
     @stack('scripts')
     @livewireScripts
-    <script src="{{ asset('turbo-livewire/turbo-livewire.js') }}" @turbolinksTrackReload></script>
     @stack('js')
     @yield('footer')
 </body>
