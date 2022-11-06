@@ -38,3 +38,26 @@ Livewire.on('swal:info', detail => {
         'info'
     )
 });
+Livewire.on('swal', (detail = {}) => {
+    Swal.fire(detail)
+});
+Livewire.on('toastr:success', (detail = []) => {
+    if (! Array.isArray(detail)) detail = [detail];
+    Toastr.success(...detail);
+});
+Livewire.on('toastr:error', (detail = [])  => {
+    if (! Array.isArray(detail)) detail = [detail];
+    Toastr.error(...detail);
+});
+Livewire.on('toastr:warning', (detail = [])  => {
+    if (! Array.isArray(detail)) detail = [detail];
+    Toastr.warning(...detail);
+});
+Livewire.on('toastr:info', (detail = [])  => {
+    if (! Array.isArray(detail)) detail = [detail];
+    Toastr.info(...detail);
+});
+Livewire.on('visit', (detail = [])  => {
+    if (! Array.isArray(detail)) detail = [detail];
+    Turbolinks.visit(...detail);
+});

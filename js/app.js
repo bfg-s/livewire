@@ -9,4 +9,4 @@ Alpine.start();
 Turbolinks.start();
 
 require('./turbolink');
-require('./swal-events');
+require('./livewire-events');

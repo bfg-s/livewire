@@ -51,6 +51,70 @@ Access:
 window.Toastr.info('Are you the 6 fingered man?')
 ```
 
+### Livewire Events
+Simple Swal access:
+```php
+class MyComponent extends \Livewire\Component
+{
+    ...
+    public function submit() {
+        $this->emit('swal', [
+            'icon' => 'error',
+            'title' => 'Oops...',
+            'text' => 'Something went wrong!',
+            'footer' => '<a href="">Why do I have this issue?</a>'
+        ]);
+    }
+    ...
+}
+```
+Swal confirm access:
+```php
+...
+    $this->emit('swal:confirm', [
+        'title' => 'Do you want to save the changes?',
+        'text' => 'Save changes',
+        'confirmEvent' => 'livewireEvent', // You livewire event
+        'confirmParams' => ['user_id' => 1], // You livewire event parameters
+    ]);
+...
+```
+Swal message access:
+```php
+...
+    $this->emit('swal:success', [
+        'title' => 'Changes saved!',
+        'text' => 'All you changes is saved'
+    ]);
+    // Or
+    $this->emit('swal:success', [ // Can be: success, error, warning, info 
+        'Changes saved!', 
+        'All you changes is saved'
+    ]);
+...
+```
+Toastr message access:
+```php
+...
+    $this->emit('toastr:success', 'Changes saved!');
+    $this->emit('toastr:success', [ // Can be: success, error, warning, info 
+        'Changes saved!', 
+        'All you changes is saved',
+        ['timeOut' => 5000]
+    ]);
+...
+```
+Turbolinks visit access:
+```php
+...
+    $this->emit('visit', '/edit');
+    // Or
+    $this->emit('visit', [
+        '/edit', ['action' => 'replace']
+    ]);
+...
+```
+
 ### Extending
 
 For inject folder you can do this:
