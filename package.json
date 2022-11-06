@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "sweetalert2": "^11.4.0",
+        "toastr": "^2.1.4",
         "turbolinks": "^5.2.0"
     }
 }
