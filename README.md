@@ -2,8 +2,8 @@
 
 Extension for the [`Livewire`](https://laravel-livewire.com/) package. 
 Adds fidder for components and extend with: 
-* [alpine](https://alpinejs.dev/) 
-* [turbolink](https://laravel-livewire.com/)
+* [Alpine](https://alpinejs.dev/) 
+* [Turbolink](https://github.com/turbolinks/turbolinks)
 * [SweetAlert2](https://sweetalert2.github.io/)
 * [Toastr](https://github.com/CodeSeven/toastr)
 
@@ -34,6 +34,11 @@ Adds fidder for components and extend with:
 * @turbolinksPermanent - [Persisting Elements Across Page Loads](https://github.com/turbolinks/turbolinks#persisting-elements-across-page-loads)
 * @turbolinksTrackReload - [Reloading When Assets Change](https://github.com/turbolinks/turbolinks#reloading-when-assets-change)
 * @turbolinksActionReplace - [Application Visits](https://github.com/turbolinks/turbolinks#application-visits)
+
+Access:
+```javascript
+window.Turbolinks.visit("/edit", { action: "replace" })
+```
 
 ### SweetAlert2
 Access:
