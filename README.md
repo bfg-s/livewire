@@ -1,11 +1,16 @@
 # Extension livewire
 
 Extension for the [`Livewire`](https://laravel-livewire.com/) package. 
-Adds fidder for components and extend with: 
+Adds finder for components and extend with: 
 * [Alpine](https://alpinejs.dev/) 
 * [Turbolink](https://github.com/turbolinks/turbolinks)
 * [SweetAlert2](https://sweetalert2.github.io/)
 * [Toastr](https://github.com/CodeSeven/toastr)
+
+## Install
+```bash
+composer required bfg/livewire
+```
 
 ## Usage
 
